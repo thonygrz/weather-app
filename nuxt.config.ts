@@ -2,8 +2,12 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   ssr: true,
-  modules: ['@pinia/nuxt'],
   
+  nitro: {
+    preset: "netlify"
+  },
+  modules: ['@pinia/nuxt'],
+
   runtimeConfig: {
     public: {
       // Weather API
