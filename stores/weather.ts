@@ -224,8 +224,13 @@ export const useWeatherStore = defineStore('weather', {
           `${config.oneCallUrl}?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`
         );
         this.dailyForecast = data.daily;
-      } catch (error) {
-        console.error("Error fetching daily forecast:", error);
+      } catch (error: FetchError | unknown) {
+        if ((error as FetchError)?.response?.status === 429) {
+          window.alert('Anthony has ran out of API calls for today. Information won\'t be displayed correctly. Please try again tomorrow.');
+        } else {
+          console.error('Error fetching weather:', error);
+          window.alert('An unexpected error occurred while fetching the weather.');
+        }
       }
     },
   },
