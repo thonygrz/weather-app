@@ -16,6 +16,8 @@ import WeatherViewer from "@/components/WeatherViewer.vue";
 const route = useRoute();
 const weatherStore = useWeatherStore();
 
+weatherStore.initSavedCities();
+
 onMounted(async () => {
   const cityName = route.params.slug as string | undefined;
   if (cityName) {
