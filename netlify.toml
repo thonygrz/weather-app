@@ -1,9 +1,6 @@
 [build]
   command = "npm run build"
 
-[functions]
-  included_files = ["public/**", "assets/**", ".output/public/**", ".output/server/**"]
-
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/server"
