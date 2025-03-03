@@ -2,9 +2,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   ssr: true,
-  
+
   nitro: {
-    preset: "netlify"
+    preset: "vercel"
   },
   modules: ['@pinia/nuxt'],
 
