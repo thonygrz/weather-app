@@ -1,6 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "/opt/build/repo/.output/public"      # Directorio con los activos estáticos
-
-[functions]
-  directory = "/opt/build/repo/.output/server"    # Directorio con las funciones SSR (Nitro)
