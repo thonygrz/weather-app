@@ -5,13 +5,20 @@ import { createTestingPinia } from '@pinia/testing'
 import { createRouter, createMemoryHistory } from 'vue-router'
 import { useWeatherStore } from '@/stores/weather'
 
+vi.stubGlobal('$fetch', vi.fn(async (url) => {
+  if (url.includes('oneCallUrl')) {
+    return { hourly: [], daily: [] }
+  }
+  return {}
+}))
+
 describe('SearchForm.vue - City Search', () => {
   // Test to ensure navigation to the first suggestion when pressing Enter
   it('navigates to the first suggestion when Enter is pressed', async () => {
     // Setup a mock router
     const router = createRouter({
       history: createMemoryHistory(),
-      routes: []
+      routes: [{ path: '/:pathMatch(.*)*', name: 'NotFound', component: { template: '<div>Not Found</div>' } }]
     })
     router.push = vi.fn()
 
@@ -45,7 +52,7 @@ describe('SearchForm.vue - City Search', () => {
   it('shows alert when no suggestions are available and Enter is pressed', async () => {
     const router = createRouter({
       history: createMemoryHistory(),
-      routes: []
+      routes: [{ path: '/:pathMatch(.*)*', name: 'NotFound', component: { template: '<div>Not Found</div>' } }]
     })
     router.push = vi.fn()
 
@@ -84,7 +91,7 @@ describe('SearchForm.vue - City Search', () => {
   it('redirects to the detected city when clicking the location button', async () => {
     const router = createRouter({
       history: createMemoryHistory(),
-      routes: []
+      routes: [{ path: '/:pathMatch(.*)*', name: 'NotFound', component: { template: '<div>Not Found</div>' } }]
     })
     router.push = vi.fn()
 

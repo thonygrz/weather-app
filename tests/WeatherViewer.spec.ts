@@ -4,6 +4,12 @@ import WeatherViewer from '~/components/WeatherViewer.vue'
 import { createTestingPinia } from '@pinia/testing'
 import { useWeatherStore } from '@/stores/weather'
 
+vi.stubGlobal('$fetch', vi.fn(async () => ({
+    hourly: [],
+    daily: []
+})))
+  
+
 describe('WeatherViewer.vue - Saved Cities', () => {
   // Test to save the city, update the heart icon, and add to savedCities list
   it('saves the city and updates heart icon and savedCities list', async () => {
