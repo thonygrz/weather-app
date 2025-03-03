@@ -7,6 +7,7 @@ import type {
   CurrentWeatherResponse,
   OneCallDailyForecastItem
 } from '~/interfaces/weather';
+import type { FetchError } from 'ofetch';
 
 // Helper function: Map weather condition + day/night to icon path
 function mapConditionToIcon(mainCondition: string, isDay: boolean): string {
@@ -85,8 +86,13 @@ export const useWeatherStore = defineStore('weather', {
         );
         await this.fetchHourlyForecast();
         await this.fetchDailyForecast();
-      } catch (error) {
-        console.error('Error fetching weather:', error);
+      } catch (error: FetchError | unknown) {
+        if ((error as FetchError)?.response?.status === 404) {
+          window.alert('City not found');
+        } else {
+          console.error('Error fetching weather:', error);
+          window.alert('An unexpected error occurred while fetching the weather.');
+        }
       }
     },
 
