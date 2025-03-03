@@ -1,75 +1,107 @@
-# Nuxt Minimal Starter
+# 🌤️ Weather App
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<details>
+  <summary>🚀 Overview</summary>
 
-## Setup
+Weather App built with **Nuxt 3**, using **OpenWeather API** to display current weather, hourly forecast, and upcoming days.  
 
-Make sure to install dependencies:
+Includes city search with suggestions, geolocation support, and the ability to save favorite cities.
 
-```bash
-# npm
-npm install
+</details>
 
-# pnpm
-pnpm install
+<details>
+  <summary>▶️ Demo</summary>
 
-# yarn
-yarn install
+<details>
+  <summary>💻 Desktop</summary>
 
-# bun
-bun install
-```
 
-## Development Server
 
-Start the development server on `http://localhost:3000`:
+</details>
 
-```bash
-# npm
-npm run dev
+<details>
+  <summary>📱 Mobile</summary>
 
-# pnpm
-pnpm dev
 
-# yarn
-yarn dev
 
-# bun
-bun run dev
-```
+</details>
 
-## Production
+</details>
 
-Build the application for production:
+<details> 
+    <summary>📝 How to use</summary>
+- Search for a city using the input field.
+- Select from the dropdown or press Enter.
+- Use the location button to detect your current city.
+- Press the heart icon to save a city.
+- Reload the page and check that your saved cities persist.
+</details>
 
-```bash
-# npm
-npm run build
+<details>
+  <summary>⚙️ Tech Stack</summary>
 
-# pnpm
-pnpm build
+- **Nuxt 3**
+- **TypeScript**
+- **Pinia**
+- **TailwindCSS**
+- **OpenWeather API**
+- **Vitest** + **Vue Test Utils** (for testing)
 
-# yarn
-yarn build
+</details>
 
-# bun
-bun run build
-```
+<details>
+  <summary>🏗️ Features</summary>
 
-Locally preview production build:
+- 🌐 Search for cities with autocomplete suggestions.
+- 📍 Detect your current location and fetch the weather.
+- ❤️ Save favorite cities (persistent after reload).
+- 🔄 Responsive design for all devices.
+- 📊 Displays current weather, hourly forecast, and multi-day forecast.
+- 🚨 Error handling for invalid cities and API limits.
 
-```bash
-# npm
-npm run preview
+</details>
 
-# pnpm
-pnpm preview
+<details>
+  <summary>🔍 How to run the project</summary>
 
-# yarn
-yarn preview
+1. Make sure you have installed Node.js - 18.x or newer
+2. Clone the repository
 
-# bun
-bun run preview
-```
+    ```
+    git clone https://github.com/thonygrz/world-of-movies.git
+    ```
+3. Install dependencies
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+    ```
+    npm install
+    ```
+4. Add the `.env` file (provided by [thonygrz](mailto:anthony81199@gmail.com?subject=Hi!%20I%20want%20the%20env%20files%20of%20your%20Weather%20app.) via email) to the root of the project.
+5. Run the test suite:
+
+    ```
+    npm test
+    ```
+6. Make sure all tests pass
+7. Run the frontend app:
+
+    ```
+    npm run dev
+    ```
+
+
+</details> 
+
+<details> 
+    <summary>📦 Deployment</summary>
+
+Project is deployed on Vercel:
+🔗 [weather-app](https://weather-app-anthonys-projects-4c94a37c.vercel.app)
+
+</details>
+
+<details> 
+    <summary>👤 Author</summary>
+
+Anthony – [LinkedIn](https://www.linkedin.com/in/thonyrod) | [GitHub](https://www.github.com/thonygrz)
+
+</details>
