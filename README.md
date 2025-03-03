@@ -16,13 +16,15 @@ Includes city search with suggestions, geolocation support, and the ability to s
   <summary>💻 Desktop</summary>
 
 
+https://github.com/user-attachments/assets/ead877c0-e398-4ec5-851d-8d6de4f16ee5
+
 
 </details>
 
 <details>
   <summary>📱 Mobile</summary>
 
-
+https://github.com/user-attachments/assets/49f7c8cb-e77b-4988-bef4-eff7df7682a5
 
 </details>
 
@@ -30,7 +32,8 @@ Includes city search with suggestions, geolocation support, and the ability to s
 
 <details> 
     <summary>📝 How to use</summary>
-- Search for a city using the input field.
+
+  - Search for a city using the input field.
 - Select from the dropdown or press Enter.
 - Use the location button to detect your current city.
 - Press the heart icon to save a city.
@@ -82,6 +85,10 @@ Includes city search with suggestions, geolocation support, and the ability to s
     npm test
     ```
 6. Make sure all tests pass
+
+![{347A0DA5-36F2-4499-8E61-CD85CF40B139}](https://github.com/user-attachments/assets/e36b661b-d773-4a77-9a76-1f7df6f5565f)
+
+
 7. Run the frontend app:
 
     ```
