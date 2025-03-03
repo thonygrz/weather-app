@@ -133,10 +133,13 @@ function selectSuggestion(suggest: { name: string; country?: string }): void {
  * Navigate to the city page when the user presses Enter.
  */
 function goToCity(): void {
-  if (city.value.trim()) {
-    router.push(`/city/${city.value.trim()}`);
-    city.value = "";
+  if (suggestions.value.length > 0) {
+    const firstSuggestion = suggestions.value[0];
+    city.value = firstSuggestion.name;
     showSuggestions.value = false;
+    router.push(`/city/${firstSuggestion.name}`);
+  } else {
+    window.alert("No results found for your search.");
   }
 }
 
