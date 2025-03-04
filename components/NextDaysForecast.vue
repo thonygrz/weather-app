@@ -56,17 +56,20 @@ function mapConditionToIcon(mainCondition: string, isDay: boolean): string {
 
 const weatherStore = useWeatherStore();
 
-// Computed: Use the daily forecast from the store (assuming it's already populated)
+// Computed: Use the daily forecast from the store
 const nextDays = computed(() => {
   // If dailyForecast is not available, return an empty array
-  if (!weatherStore.dailyForecast || weatherStore.dailyForecast.length === 0) return [];
-  
+  if (!weatherStore.dailyForecast || weatherStore.dailyForecast.length === 0)
+    return [];
+
   // Skip the first element if it represents today and take the next 3 days.
-  // Adjust according to your needs.
-  return weatherStore.dailyForecast.slice(1, 4).map(day => {
+  return weatherStore.dailyForecast.slice(1, 4).map((day) => {
     const realDate = new Date(day.dt * 1000);
     const weekday = realDate.toLocaleDateString([], { weekday: "short" });
-    const dateString = realDate.toLocaleDateString([], { day: "2-digit", month: "2-digit" });
+    const dateString = realDate.toLocaleDateString([], {
+      day: "2-digit",
+      month: "2-digit",
+    });
     // Use the weather condition from the day's forecast; assume daytime for the icon.
     const isDay = true;
     const iconPath = mapConditionToIcon(day.weather[0].main, isDay);
@@ -76,7 +79,7 @@ const nextDays = computed(() => {
       minTemp: Math.round(day.temp.min),
       maxTemp: Math.round(day.temp.max),
       wind: day.wind_speed.toFixed(1),
-      rainProb: Math.round(day.pop * 100), // pop is usually in decimal form (0.2 means 20%)
+      rainProb: Math.round(day.pop * 100),
       iconPath,
       realDate,
     };
@@ -84,6 +87,4 @@ const nextDays = computed(() => {
 });
 </script>
 
-<style scoped>
-/* Adjust styles as needed */
-</style>
+<style></style>

@@ -1,5 +1,3 @@
-// interfaces/weather.ts
-
 // Current weather response (from the /weather endpoint)
 export interface CurrentWeatherResponse {
     coord: {

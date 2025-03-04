@@ -11,7 +11,6 @@ vi.stubGlobal('$fetch', vi.fn(async () => ({
   
 
 describe('WeatherViewer.vue - Saved Cities', () => {
-  // Test to save the city, update the heart icon, and add to savedCities list
   it('saves the city and updates heart icon and savedCities list', async () => {
     const pinia = createTestingPinia({
       initialState: {
@@ -52,7 +51,6 @@ describe('WeatherViewer.vue - Saved Cities', () => {
     expect(wrapper.find('[alt="City saved"]').exists()).toBe(true)
   })
 
-  // Test to ensure the city remains saved and icon remains filled after reload
   it('keeps the city saved and heart filled after reload', async () => {
     const pinia = createTestingPinia({
       initialState: {

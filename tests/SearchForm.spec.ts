@@ -13,7 +13,6 @@ vi.stubGlobal('$fetch', vi.fn(async (url) => {
 }))
 
 describe('SearchForm.vue - City Search', () => {
-  // Test to ensure navigation to the first suggestion when pressing Enter
   it('navigates to the first suggestion when Enter is pressed', async () => {
     // Setup a mock router
     const router = createRouter({
@@ -48,7 +47,6 @@ describe('SearchForm.vue - City Search', () => {
     expect(router.push).toHaveBeenCalledWith('/city/London')
   })
 
-  // Test to display an alert when no suggestions exist and Enter is pressed
   it('shows alert when no suggestions are available and Enter is pressed', async () => {
     const router = createRouter({
       history: createMemoryHistory(),
@@ -87,7 +85,6 @@ describe('SearchForm.vue - City Search', () => {
     alertMock.mockRestore()
   })
 
-  // Test for geolocation button to navigate to the detected city
   it('redirects to the detected city when clicking the location button', async () => {
     const router = createRouter({
       history: createMemoryHistory(),

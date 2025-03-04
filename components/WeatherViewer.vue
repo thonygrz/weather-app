@@ -19,7 +19,7 @@
       </button>
     </div>
 
-    <!-- Row 2: Responsive container for weather details -->
+    <!-- Row 2: Container for weather details -->
     <div class="flex flex-col md:flex-row justify-center items-center">
       <!-- Left Column: City name, temperature and details -->
       <div

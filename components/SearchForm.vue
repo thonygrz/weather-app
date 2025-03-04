@@ -2,7 +2,7 @@
   <div class="flex items-center gap-4">
     <!-- Input container with suggestions dropdown -->
     <div class="relative w-72">
-      <!-- Magnifying glass icon (absolute positioned) -->
+      <!-- Magnifying glass icon -->
       <span
         class="absolute left-0 top-1/2 transform -translate-y-1/2 pl-2 text-gray-400 pointer-events-none"
       >
@@ -33,7 +33,7 @@
         </svg>
       </span>
 
-      <!-- Search input with bottom border only -->
+      <!-- Search input -->
       <input
         v-model="city"
         type="text"
@@ -112,7 +112,6 @@ function onInputChange(): void {
     weatherStore.fetchCitySuggestions(city.value.trim());
     showSuggestions.value = true;
   } else {
-    // Clear suggestions when input is empty
     weatherStore.suggestions = [];
     showSuggestions.value = false;
   }
@@ -162,6 +161,4 @@ async function useLocation(): Promise<void> {
 }
 </script>
 
-<style scoped>
-/* No changes in styling needed */
-</style>
+<style></style>
